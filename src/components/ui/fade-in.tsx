@@ -9,6 +9,7 @@ interface FadeInProps extends HTMLAttributes<HTMLDivElement> {
   delay?: number;
   duration?: number;
   yOffset?: number;
+  xOffset?: number;
 }
 
 export function FadeIn({
@@ -17,6 +18,7 @@ export function FadeIn({
   delay = 0,
   duration = 0.5,
   yOffset = 16,
+  xOffset = 0,
   ...props
 }: FadeInProps) {
   const [isVisible, setIsVisible] = useState(false);
@@ -55,7 +57,7 @@ export function FadeIn({
         transitionDuration: `${duration}s`,
         transitionDelay: `${delay}s`,
         opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : `translateY(${yOffset}px)`,
+        transform: isVisible ? 'translate(0, 0)' : `translate(${xOffset}px, ${yOffset}px)`,
       }}
       {...props}
     >

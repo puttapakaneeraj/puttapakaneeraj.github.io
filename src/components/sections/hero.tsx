@@ -1,6 +1,9 @@
+
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
-import { Download, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { PROFILE_DATA, SOCIAL_LINKS } from '@/lib/data';
@@ -10,25 +13,11 @@ export function HeroSection() {
   const profilePhoto = PlaceHolderImages.find((img) => img.id === 'profile-photo');
 
   return (
-    <section id="home" className="py-16 sm:py-24 bg-card border-b">
+    <section id="home" className="relative overflow-hidden bg-card border-b py-24 sm:py-32">
       <div className="container mx-auto max-w-7xl px-4">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-3">
-          <FadeIn className="flex justify-center lg:order-last lg:col-span-1" delay={0.2}>
-            {profilePhoto && (
-              <div className="relative h-64 w-64 lg:h-80 lg:w-80">
-                <Image
-                  src={profilePhoto.imageUrl}
-                  alt={PROFILE_DATA.name}
-                  width={320}
-                  height={320}
-                  priority
-                  data-ai-hint={profilePhoto.imageHint}
-                  className="rounded-full object-cover shadow-lg border-4 border-background"
-                />
-              </div>
-            )}
-          </FadeIn>
-          <div className="text-center lg:col-span-2 lg:text-left">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+          {/* Left Content */}
+          <div className="text-center lg:text-left">
             <FadeIn>
               <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
                 {PROFILE_DATA.name}
@@ -45,12 +34,6 @@ export function HeroSection() {
             <FadeIn delay={0.3}>
               <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
                 <Button asChild size="lg">
-                  <a href={PROFILE_DATA.resumeUrl} download>
-                    <Download className="mr-2 h-5 w-5" />
-                    Download Resume
-                  </a>
-                </Button>
-                <Button asChild variant="secondary" size="lg">
                   <Link href="#contact">
                     <Mail className="mr-2 h-5 w-5" />
                     Contact Me
@@ -73,6 +56,26 @@ export function HeroSection() {
                   </Link>
                 ))}
               </div>
+            </FadeIn>
+          </div>
+
+          {/* Right Content (Image) */}
+          <div className="flex justify-center">
+            <FadeIn
+              className="relative h-80 w-80 lg:h-96 lg:w-96"
+              yOffset={0}
+            >
+              {profilePhoto && (
+                <Image
+                  src={profilePhoto.imageUrl}
+                  alt={PROFILE_DATA.name}
+                  width={400}
+                  height={400}
+                  priority
+                  data-ai-hint={profilePhoto.imageHint}
+                  className="rounded-full object-cover shadow-2xl border-8 border-background"
+                />
+              )}
             </FadeIn>
           </div>
         </div>
