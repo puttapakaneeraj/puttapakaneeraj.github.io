@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -20,7 +21,7 @@ export function ProjectsSection() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {PROJECTS_DATA.map((project, index) => (
             <FadeIn key={project.title} delay={index * 0.1}>
-              <Card className="flex h-full flex-col overflow-hidden shadow-sm transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xl">
+              <Card className="flex h-full flex-col overflow-hidden shadow-sm transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                 <div className="relative h-48 w-full">
                   <Image
                     src={project.imageUrl}
@@ -32,8 +33,8 @@ export function ProjectsSection() {
                   />
                 </div>
                 <CardHeader>
-                  <CardTitle>{project.title}</CardTitle>
-                  <CardDescription>{project.description}</CardDescription>
+                  <CardTitle className="text-xl">{project.title}</CardTitle>
+                  <CardDescription className="text-sm">{project.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow">
                   <div className="flex flex-wrap gap-2">

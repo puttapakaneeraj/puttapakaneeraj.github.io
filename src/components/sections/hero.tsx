@@ -18,20 +18,20 @@ export function HeroSection() {
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           {/* Left Content */}
           <div className="text-center lg:text-left">
-            <FadeIn>
+            <FadeIn xOffset={-40} yOffset={0}>
               <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
                 {PROFILE_DATA.name}
               </h1>
             </FadeIn>
-            <FadeIn delay={0.1}>
+            <FadeIn delay={0.1} xOffset={-40} yOffset={0}>
               <p className="mt-4 text-xl font-medium text-accent">{PROFILE_DATA.title}</p>
             </FadeIn>
-            <FadeIn delay={0.2}>
+            <FadeIn delay={0.2} xOffset={-40} yOffset={0}>
               <p className="mt-6 max-w-2xl text-lg text-muted-foreground lg:mx-0 mx-auto">
                 {PROFILE_DATA.summary}
               </p>
             </FadeIn>
-            <FadeIn delay={0.3}>
+            <FadeIn delay={0.3} xOffset={-40} yOffset={0}>
               <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
                 <Button asChild size="lg">
                   <Link href="#contact">
@@ -41,7 +41,7 @@ export function HeroSection() {
                 </Button>
               </div>
             </FadeIn>
-            <FadeIn delay={0.4}>
+            <FadeIn delay={0.4} xOffset={-40} yOffset={0}>
               <div className="mt-8 flex justify-center gap-6 lg:justify-start">
                 {SOCIAL_LINKS.map((link) => (
                   <Link
@@ -63,6 +63,7 @@ export function HeroSection() {
           <div className="flex justify-center">
             <FadeIn
               className="relative h-80 w-80 lg:h-96 lg:w-96"
+              xOffset={40}
               yOffset={0}
             >
               {profilePhoto && (
