@@ -12,31 +12,37 @@ export function HeroSection() {
   return (
     <section id="home" className="py-16 sm:py-24 bg-card border-b">
       <div className="container mx-auto max-w-7xl px-4">
-        <FadeIn>
-          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-3">
-            <div className="flex justify-center lg:order-last lg:col-span-1">
-              {profilePhoto && (
-                <div className="relative h-64 w-64 lg:h-80 lg:w-80">
-                  <Image
-                    src={profilePhoto.imageUrl}
-                    alt={PROFILE_DATA.name}
-                    width={320}
-                    height={320}
-                    priority
-                    data-ai-hint={profilePhoto.imageHint}
-                    className="rounded-full object-cover shadow-lg border-4 border-background"
-                  />
-                </div>
-              )}
-            </div>
-            <div className="text-center lg:col-span-2 lg:text-left">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-3">
+          <FadeIn className="flex justify-center lg:order-last lg:col-span-1" delay={0.2}>
+            {profilePhoto && (
+              <div className="relative h-64 w-64 lg:h-80 lg:w-80">
+                <Image
+                  src={profilePhoto.imageUrl}
+                  alt={PROFILE_DATA.name}
+                  width={320}
+                  height={320}
+                  priority
+                  data-ai-hint={profilePhoto.imageHint}
+                  className="rounded-full object-cover shadow-lg border-4 border-background"
+                />
+              </div>
+            )}
+          </FadeIn>
+          <div className="text-center lg:col-span-2 lg:text-left">
+            <FadeIn>
               <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
                 {PROFILE_DATA.name}
               </h1>
+            </FadeIn>
+            <FadeIn delay={0.1}>
               <p className="mt-4 text-xl font-medium text-accent">{PROFILE_DATA.title}</p>
+            </FadeIn>
+            <FadeIn delay={0.2}>
               <p className="mt-6 max-w-2xl text-lg text-muted-foreground lg:mx-0 mx-auto">
                 {PROFILE_DATA.summary}
               </p>
+            </FadeIn>
+            <FadeIn delay={0.3}>
               <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
                 <Button asChild size="lg">
                   <a href={PROFILE_DATA.resumeUrl} download>
@@ -51,6 +57,8 @@ export function HeroSection() {
                   </Link>
                 </Button>
               </div>
+            </FadeIn>
+            <FadeIn delay={0.4}>
               <div className="mt-8 flex justify-center gap-6 lg:justify-start">
                 {SOCIAL_LINKS.map((link) => (
                   <Link
@@ -65,9 +73,9 @@ export function HeroSection() {
                   </Link>
                 ))}
               </div>
-            </div>
+            </FadeIn>
           </div>
-        </FadeIn>
+        </div>
       </div>
     </section>
   );

@@ -6,9 +6,19 @@ import { cn } from '@/lib/utils';
 
 interface FadeInProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
+  delay?: number;
+  duration?: number;
+  yOffset?: number;
 }
 
-export function FadeIn({ children, className, ...props }: FadeInProps) {
+export function FadeIn({
+  children,
+  className,
+  delay = 0,
+  duration = 0.8,
+  yOffset = 24,
+  ...props
+}: FadeInProps) {
   const [isVisible, setIsVisible] = useState(false);
   const domRef = useRef<HTMLDivElement>(null);
 
@@ -40,13 +50,13 @@ export function FadeIn({ children, className, ...props }: FadeInProps) {
   return (
     <div
       ref={domRef}
-      className={cn(
-        'transition-opacity-transform duration-1000 ease-out motion-reduce:transition-none',
-        isVisible
-          ? 'opacity-100 translate-y-0'
-          : 'opacity-0 translate-y-8',
-        className
-      )}
+      className={cn('transition-all ease-out motion-reduce:transition-none', className)}
+      style={{
+        transitionDuration: `${duration}s`,
+        transitionDelay: `${delay}s`,
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : `translateY(${yOffset}px)`,
+      }}
       {...props}
     >
       {children}

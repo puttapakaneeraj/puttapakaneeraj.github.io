@@ -2,7 +2,6 @@
 'use server';
 
 import { z } from 'zod';
-import { summarizeResume, type SummarizeResumeOutput } from '@/ai/flows/summarize-resume';
 
 // Schema for contact form validation
 const contactSchema = z.object({
@@ -46,48 +45,4 @@ export async function sendContactForm(
     message: 'Thank you for your message! I will get back to you soon.',
     status: 'success',
   };
-}
-
-// Schema for resume summarizer validation
-const resumeSchema = z.object({
-  resumeText: z.string().min(100, { message: 'Resume text must be at least 100 characters.' }),
-});
-
-export type SummarizeFormState = {
-  message: string;
-  summary: string | null;
-  status: 'success' | 'error' | 'idle';
-};
-
-export async function summarizeResumeAction(
-  prevState: SummarizeFormState,
-  formData: FormData
-): Promise<SummarizeFormState> {
-  const validatedFields = resumeSchema.safeParse({
-    resumeText: formData.get('resumeText'),
-  });
-
-  if (!validatedFields.success) {
-    return {
-      message: validatedFields.error.flatten().fieldErrors.resumeText?.[0] || 'Invalid resume text.',
-      summary: null,
-      status: 'error',
-    };
-  }
-
-  try {
-    const result: SummarizeResumeOutput = await summarizeResume({ resumeText: validatedFields.data.resumeText });
-    return {
-      summary: result.summary,
-      message: 'Summary generated successfully.',
-      status: 'success',
-    };
-  } catch (error) {
-    console.error('Error summarizing resume:', error);
-    return {
-      message: 'An unexpected error occurred while generating the summary. Please try again later.',
-      summary: null,
-      status: 'error',
-    };
-  }
 }
