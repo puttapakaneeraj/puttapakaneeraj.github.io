@@ -1,14 +1,14 @@
 
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
-import { SOCIAL_LINKS } from '@/lib/data';
+import { SOCIAL_LINKS, PROFILE_DATA } from '@/lib/data';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
@@ -21,8 +21,13 @@ const NAV_LINKS = [
 
 export function Header() {
   const isMobile = useIsMobile();
+  const [hasMounted, setHasMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const profilePhoto = PlaceHolderImages.find((img) => img.id === 'profile-photo');
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
   const Logo = () => (
     <div className="flex items-center gap-2 font-bold text-lg">
@@ -36,7 +41,7 @@ export function Header() {
                 data-ai-hint={profilePhoto.imageHint}
             />
         )}
-      <span>Devfolio</span>
+      <span>{PROFILE_DATA.name}</span>
     </div>
   );
 
@@ -46,7 +51,7 @@ export function Header() {
         <Link href="/" className="flex items-center gap-2 font-bold text-lg">
           <Logo />
         </Link>
-        {isMobile ? (
+        {hasMounted && isMobile ? (
           <div className="flex items-center gap-2">
             <ThemeToggle />
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -91,7 +96,7 @@ export function Header() {
           </div>
         ) : (
           <div className="flex items-center gap-6">
-            <nav className="flex items-center gap-6 text-sm font-medium">
+            <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
               {NAV_LINKS.map((link) => (
                 <Link
                   key={link.href}
