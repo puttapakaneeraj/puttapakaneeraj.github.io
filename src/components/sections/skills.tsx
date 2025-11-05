@@ -4,7 +4,7 @@ import { FadeIn } from '../ui/fade-in';
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="bg-card border-y">
+    <section id="skills" className="py-16 sm:py-24">
       <div className="container mx-auto max-w-7xl px-4">
         <FadeIn>
           <div className="mb-12 text-center">
@@ -15,7 +15,7 @@ export function SkillsSection() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {SKILLS_DATA.map((category, index) => (
             <FadeIn key={category.name} delay={index * 0.1}>
-              <Card className="h-full shadow-sm transition-shadow hover:shadow-lg">
+              <Card className="h-full shadow-sm transition-shadow hover:shadow-lg bg-card">
                 <CardHeader className="flex flex-row items-center gap-4 pb-4">
                   <div className="p-3 rounded-md bg-accent/10">
                     <category.icon className="h-6 w-6 text-accent" />

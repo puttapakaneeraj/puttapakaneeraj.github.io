@@ -9,7 +9,7 @@ import { FadeIn } from '../ui/fade-in';
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="bg-background">
+    <section id="projects" className="py-16 sm:py-24">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <div className="mb-12 text-center">

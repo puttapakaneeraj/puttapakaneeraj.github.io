@@ -5,7 +5,7 @@ import { FadeIn } from '../ui/fade-in';
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="bg-background">
+    <section id="experience" className="py-16 sm:py-24">
       <div className="container mx-auto max-w-5xl px-4">
         <FadeIn>
           <div className="mb-12 text-center">
@@ -24,7 +24,7 @@ export function ExperienceSection() {
                     <Briefcase className="h-4 w-4" />
                   </div>
                 </div>
-                <Card className="shadow-md transition-shadow hover:shadow-lg">
+                <Card className="shadow-md transition-shadow hover:shadow-lg bg-card">
                   <CardHeader>
                     <p className="text-sm text-muted-foreground">{job.period}</p>
                     <CardTitle>{job.role}</CardTitle>

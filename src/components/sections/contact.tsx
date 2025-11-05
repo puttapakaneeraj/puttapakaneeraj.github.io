@@ -60,7 +60,7 @@ export function ContactSection() {
   }, [state, toast]);
 
   return (
-    <section id="contact" className="bg-card border-t">
+    <section id="contact" className="py-16 sm:py-24">
       <div className="container mx-auto max-w-4xl px-4">
         <FadeIn>
           <div className="mb-12 text-center">
@@ -72,7 +72,7 @@ export function ContactSection() {
         </FadeIn>
         
         <FadeIn delay={0.2}>
-          <Card className="shadow-lg overflow-hidden">
+          <Card className="shadow-lg overflow-hidden bg-card">
             <div className="grid grid-cols-1 md:grid-cols-2">
               <div className="p-6 md:p-8 bg-background/50">
                 <h3 className="text-2xl font-semibold mb-4 text-primary">{PROFILE_DATA.name}</h3>
@@ -84,9 +84,9 @@ export function ContactSection() {
                   <p className="flex items-center gap-2">{PROFILE_DATA.location}</p>
                 </div>
                 <Separator className="my-8" />
-                <div className="flex flex-wrap items-center gap-4">
+                <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
                   {SOCIAL_LINKS.map((link) => (
-                      <Button key={link.name} variant="outline" asChild className="gap-2 flex-grow sm:flex-grow-0">
+                      <Button key={link.name} variant="outline" asChild className="gap-2">
                         <Link href={link.url} target="_blank" rel="noopener noreferrer">
                             <link.icon className="h-5 w-5" />
                             <span>{link.name}</span>

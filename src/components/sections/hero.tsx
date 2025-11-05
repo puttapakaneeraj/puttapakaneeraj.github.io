@@ -9,7 +9,7 @@ import { FadeIn } from '@/components/ui/fade-in';
 
 export function HeroSection() {
   return (
-    <section id="home" className="relative overflow-hidden bg-card border-b py-20 sm:py-24 md:py-32">
+    <section id="home" className="relative overflow-hidden py-20 sm:py-24 md:py-32">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12">
           <div className="text-center">
