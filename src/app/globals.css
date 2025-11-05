@@ -81,14 +81,12 @@ html {
   }
   body {
     @apply bg-background text-foreground;
-  }
-  .dark body {
-    background: linear-gradient(-45deg, hsl(212 33% 10%), hsl(212 33% 15%), hsl(174 62% 20%), hsl(212 33% 10%));
+    background: linear-gradient(-45deg, hsl(var(--background)), hsl(var(--secondary)), hsl(174 62% 80%), hsl(var(--background)));
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
   }
-  body {
-    background: linear-gradient(-45deg, hsl(210 29% 95%), hsl(210 20% 90%), hsl(174 62% 50%), hsl(210 29% 95%));
+  .dark body {
+    background: linear-gradient(-45deg, hsl(212 33% 10%), hsl(212 33% 15%), hsl(174 62% 20%), hsl(212 33% 10%));
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
   }
