@@ -23,7 +23,6 @@ export const PROFILE_DATA = {
   title: 'Full-Stack Software Developer',
   summary:
     "A passionate and creative full-stack developer with a knack for building beautiful, functional, and user-centric web applications. With over 5 years of experience, I specialize in JavaScript ecosystems, particularly React and Node.js, and I'm always excited to learn new technologies.",
-  resumeUrl: '/resume.pdf',
   email: 'hello@alexdoe.com',
   location: 'New York, NY, USA',
 };

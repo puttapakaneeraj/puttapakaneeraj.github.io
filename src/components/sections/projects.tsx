@@ -22,7 +22,7 @@ export function ProjectsSection() {
           {PROJECTS_DATA.map((project, index) => (
             <FadeIn key={project.title} delay={index * 0.1}>
               <Card className="flex h-full flex-col overflow-hidden shadow-sm transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
-                <div className="relative h-48 w-full">
+                <div className="relative h-40 w-full">
                   <Image
                     src={project.imageUrl}
                     alt={project.title}
@@ -33,8 +33,8 @@ export function ProjectsSection() {
                   />
                 </div>
                 <CardHeader>
-                  <CardTitle className="text-xl">{project.title}</CardTitle>
-                  <CardDescription className="text-sm">{project.description}</CardDescription>
+                  <CardTitle className="text-lg">{project.title}</CardTitle>
+                  <CardDescription className="text-sm line-clamp-3">{project.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow">
                   <div className="flex flex-wrap gap-2">

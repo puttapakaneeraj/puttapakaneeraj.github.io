@@ -13,7 +13,7 @@ export function HeroSection() {
   const profilePhoto = PlaceHolderImages.find((img) => img.id === 'profile-photo');
 
   return (
-    <section id="home" className="relative overflow-hidden bg-card border-b py-24 sm:py-32">
+    <section id="home" className="relative overflow-hidden bg-card border-b py-20 sm:py-24">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           {/* Left Content */}
