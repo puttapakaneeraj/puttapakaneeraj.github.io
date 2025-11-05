@@ -74,7 +74,7 @@ export function ContactSection() {
         <FadeIn delay={0.2}>
           <Card className="shadow-lg overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-2">
-              <div className="p-8 bg-background/50">
+              <div className="p-6 md:p-8 bg-background/50">
                 <h3 className="text-2xl font-semibold mb-4 text-primary">{PROFILE_DATA.name}</h3>
                 <p className="text-muted-foreground mb-6">
                   You can reach me via email or connect with me on social media. I'm always open to discussing new projects and opportunities.
@@ -84,9 +84,9 @@ export function ContactSection() {
                   <p className="flex items-center gap-2">{PROFILE_DATA.location}</p>
                 </div>
                 <Separator className="my-8" />
-                <div className="flex items-center gap-4">
+                <div className="flex flex-wrap items-center gap-4">
                   {SOCIAL_LINKS.map((link) => (
-                      <Button key={link.name} variant="outline" asChild className="gap-2">
+                      <Button key={link.name} variant="outline" asChild className="gap-2 flex-grow sm:flex-grow-0">
                         <Link href={link.url} target="_blank" rel="noopener noreferrer">
                             <link.icon className="h-5 w-5" />
                             <span>{link.name}</span>
@@ -96,7 +96,7 @@ export function ContactSection() {
                 </div>
               </div>
 
-              <div className="p-8">
+              <div className="p-6 md:p-8">
                 <form action={formAction}>
                   <CardHeader className="p-0 mb-6">
                       <CardTitle className="text-2xl">Send a Message</CardTitle>
