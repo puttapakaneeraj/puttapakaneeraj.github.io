@@ -21,7 +21,7 @@ export function ProjectsSection() {
           {PROJECTS_DATA.map((project, index) => (
             <FadeIn key={project.title} delay={index * 0.1}>
               <div
-                className={`group grid grid-cols-1 items-center gap-8 rounded-lg border bg-card p-4 shadow-sm transition-all duration-300 hover:shadow-lg md:p-8`}
+                className={`group grid grid-cols-1 md:grid-cols-5 items-center gap-8 rounded-lg border bg-transparent p-4 transition-all duration-300`}
               >
                 <div
                   className={`relative h-64 w-full overflow-hidden rounded-md md:h-80 ${
