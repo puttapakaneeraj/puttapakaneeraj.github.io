@@ -20,7 +20,7 @@ export function ProjectsSection() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {PROJECTS_DATA.map((project, index) => (
             <FadeIn key={project.title} delay={index * 0.1}>
-              <Card className="flex flex-col overflow-hidden shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-xl h-full">
+              <Card className="flex h-full flex-col overflow-hidden shadow-sm transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xl">
                 <div className="relative h-48 w-full">
                   <Image
                     src={project.imageUrl}

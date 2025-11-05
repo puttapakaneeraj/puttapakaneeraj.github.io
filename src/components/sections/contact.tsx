@@ -6,13 +6,13 @@ import { useEffect } from 'react';
 import { Loader2, Send } from 'lucide-react';
 import { sendContactForm, type ContactFormState } from '@/app/actions';
 import { useToast } from '@/hooks/use-toast';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { SOCIAL_LINKS } from '@/lib/data';
+import { SOCIAL_LINKS, PROFILE_DATA } from '@/lib/data';
 import { FadeIn } from '../ui/fade-in';
 
 const initialState: ContactFormState = {
@@ -72,13 +72,13 @@ export function ContactSection() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
             <FadeIn>
                 <div>
-                    <h3 className="text-2xl font-semibold mb-4">Contact Information</h3>
+                    <h3 className="text-2xl font-semibold mb-4">{PROFILE_DATA.name}</h3>
                     <p className="text-muted-foreground mb-6">
                         You can reach me via email or connect with me on social media. I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team.
                     </p>
                     <div className="space-y-4 text-muted-foreground">
-                        <p><a href="mailto:hello@example.com" className="hover:text-accent transition-colors">hello@example.com</a></p>
-                        <p>New York, NY, USA</p>
+                        <p><a href={`mailto:${PROFILE_DATA.email}`} className="hover:text-accent transition-colors">{PROFILE_DATA.email}</a></p>
+                        <p>{PROFILE_DATA.location}</p>
                     </div>
                     <div className="mt-8 flex items-center gap-4">
                         {SOCIAL_LINKS.map((link) => (

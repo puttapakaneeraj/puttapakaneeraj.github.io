@@ -15,8 +15,8 @@ export function FadeIn({
   children,
   className,
   delay = 0,
-  duration = 0.8,
-  yOffset = 24,
+  duration = 0.5,
+  yOffset = 16,
   ...props
 }: FadeInProps) {
   const [isVisible, setIsVisible] = useState(false);

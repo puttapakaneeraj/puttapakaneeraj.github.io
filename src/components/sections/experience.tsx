@@ -13,36 +13,27 @@ export function ExperienceSection() {
             <p className="mt-3 text-lg text-muted-foreground">My professional journey so far.</p>
           </div>
         </FadeIn>
-        <div className="relative">
-          {/* The vertical line */}
-          <div className="absolute left-1/2 top-0 h-full w-0.5 -translate-x-1/2 transform bg-border" aria-hidden="true" />
+        <div className="relative pl-6">
+          <div className="absolute left-0 top-0 h-full w-0.5 bg-border -translate-x-1/2" aria-hidden="true" />
 
           {EXPERIENCE_DATA.map((job, index) => (
             <FadeIn key={index} delay={index * 0.2}>
-              <div className="relative mb-8 flex justify-between items-center w-full">
-                {/* Timeline Item Content */}
-                <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
-                  <Card className="shadow-md transition-shadow hover:shadow-lg">
-                    <CardHeader>
-                      <p className="text-sm text-muted-foreground">{job.period}</p>
-                      <CardTitle>{job.role}</CardTitle>
-                      <CardDescription>{job.company}</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-sm text-muted-foreground">{job.description}</p>
-                    </CardContent>
-                  </Card>
-                </div>
-
-                {/* Timeline Dot */}
-                <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 transform">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-accent-foreground">
+              <div className="relative mb-10 pl-8">
+                <div className="absolute -left-1.5 top-1 z-10">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-accent-foreground ring-8 ring-background">
                     <Briefcase className="h-4 w-4" />
                   </div>
                 </div>
-
-                {/* Empty placeholder for alignment */}
-                <div className={`w-1/2 ${index % 2 === 0 ? 'pl-8' : 'pr-8'}`}></div>
+                <Card className="shadow-md transition-shadow hover:shadow-lg">
+                  <CardHeader>
+                    <p className="text-sm text-muted-foreground">{job.period}</p>
+                    <CardTitle>{job.role}</CardTitle>
+                    <CardDescription>{job.company}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground">{job.description}</p>
+                  </CardContent>
+                </Card>
               </div>
             </FadeIn>
           ))}

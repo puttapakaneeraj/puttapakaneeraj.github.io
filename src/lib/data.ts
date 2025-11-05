@@ -11,6 +11,10 @@ import {
   Monitor,
   Database,
   Cloud,
+  Layers,
+  Component,
+  BrainCircuit,
+  MessageCircle,
 } from 'lucide-react';
 import { PlaceHolderImages } from './placeholder-images';
 
@@ -20,6 +24,8 @@ export const PROFILE_DATA = {
   summary:
     "A passionate and creative full-stack developer with a knack for building beautiful, functional, and user-centric web applications. With over 5 years of experience, I specialize in JavaScript ecosystems, particularly React and Node.js, and I'm always excited to learn new technologies.",
   resumeUrl: '/resume.pdf',
+  email: 'hello@alexdoe.com',
+  location: 'New York, NY, USA',
 };
 
 export const SOCIAL_LINKS = [
@@ -56,7 +62,7 @@ export const SKILLS_DATA: SkillCategory[] = [
     name: 'Frontend',
     icon: Monitor,
     skills: [
-      { name: 'React / Next.js', icon: Code },
+      { name: 'React / Next.js', icon: Component },
       { name: 'TypeScript', icon: Code },
       { name: 'Tailwind CSS', icon: Paintbrush },
       { name: 'HTML5 & CSS3', icon: Code },
@@ -66,30 +72,30 @@ export const SKILLS_DATA: SkillCategory[] = [
     name: 'Backend',
     icon: Server,
     skills: [
-      { name: 'Node.js / Express', icon: Code },
+      { name: 'Node.js / Express', icon: Layers },
       { name: 'Python / Django', icon: Code },
       { name: 'PostgreSQL', icon: Database },
       { name: 'Firebase', icon: Cloud },
     ],
   },
   {
-    name: 'AI & Tooling',
+    name: 'AI & DevOps',
     icon: Bot,
     skills: [
-      { name: 'Genkit / Firebase GenAI', icon: Bot },
+      { name: 'Genkit / Gemini', icon: BrainCircuit },
       { name: 'Docker', icon: Code },
       { name: 'Git & GitHub', icon: Github },
-      { name: 'CI/CD', icon: Code },
+      { name: 'CI/CD Pipelines', icon: Code },
     ],
   },
   {
     name: 'Soft Skills',
     icon: Users,
     skills: [
-      { name: 'Problem Solving', icon: Code },
+      { name: 'Agile Methodologies', icon: Layers },
       { name: 'Team Collaboration', icon: Users },
-      { name: 'Communication', icon: Code },
-      { name: 'Project Management', icon: Code },
+      { name: 'Effective Communication', icon: MessageCircle },
+      { name: 'Problem Solving', icon: BrainCircuit },
     ],
   },
 ];
