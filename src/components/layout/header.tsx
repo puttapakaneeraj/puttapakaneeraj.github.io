@@ -4,7 +4,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
@@ -59,26 +59,22 @@ export function Header() {
               <SheetContent side="right" className="w-[300px] sm:w-[400px]">
                 <div className="flex h-full flex-col">
                   <div className="flex items-center justify-between border-b pb-4">
-                    <Link href="/" className="flex items-center gap-2 font-bold text-lg" onClick={() => setIsOpen(false)}>
-                      <Logo />
-                    </Link>
                     <SheetClose asChild>
-                      <Button variant="ghost" size="icon">
-                          <X />
-                          <span className="sr-only">Close menu</span>
-                      </Button>
+                      <Link href="/" className="flex items-center gap-2 font-bold text-lg">
+                        <Logo />
+                      </Link>
                     </SheetClose>
                   </div>
                   <nav className="mt-8 flex flex-col gap-4">
                     {NAV_LINKS.map((link) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        className="text-lg font-medium text-foreground/80 transition-colors hover:text-foreground"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {link.name}
-                      </Link>
+                      <SheetClose asChild key={link.href}>
+                        <Link
+                          href={link.href}
+                          className="text-lg font-medium text-foreground/80 transition-colors hover:text-foreground"
+                        >
+                          {link.name}
+                        </Link>
+                      </SheetClose>
                     ))}
                   </nav>
                   <div className="mt-auto flex items-center justify-center gap-4 pb-4">
