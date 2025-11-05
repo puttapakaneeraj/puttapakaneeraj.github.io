@@ -1,7 +1,8 @@
 
 'use client';
 
-import { useFormState, useFormStatus } from 'react-dom';
+import { useActionState } from 'react';
+import { useFormStatus } from 'react-dom';
 import { useEffect } from 'react';
 import { Loader2, Send } from 'lucide-react';
 import { sendContactForm, type ContactFormState } from '@/app/actions';
@@ -42,7 +43,7 @@ function SubmitButton() {
 
 export function ContactSection() {
   const { toast } = useToast();
-  const [state, formAction] = useFormState(sendContactForm, initialState);
+  const [state, formAction] = useActionState(sendContactForm, initialState);
 
   useEffect(() => {
     if (state.status === 'success') {
