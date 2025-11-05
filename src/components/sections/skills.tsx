@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { AnimatedProgress } from '@/components/ui/animated-progress';
 import { SKILLS_DATA } from '@/lib/data';
 import { FadeIn } from '../ui/fade-in';
+import { Badge } from '../ui/badge';
 
 export function SkillsSection() {
   return (
@@ -13,7 +13,7 @@ export function SkillsSection() {
             <p className="mt-3 text-lg text-muted-foreground">A selection of my technical and soft skills.</p>
           </div>
         </FadeIn>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {SKILLS_DATA.map((category, index) => (
             <FadeIn key={category.name} delay={index * 0.1}>
               <Card className="shadow-md transition-shadow hover:shadow-lg h-full">
@@ -22,20 +22,14 @@ export function SkillsSection() {
                   <CardTitle>{category.name}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-6">
+                  <div className="flex flex-wrap gap-2">
                     {category.skills.map((skill) => (
-                      <li key={skill.name}>
-                        <div className="mb-2 flex items-center justify-between">
-                          <div className="flex items-center gap-2">
-                            <skill.icon className="h-5 w-5 text-muted-foreground" />
-                            <span className="font-medium">{skill.name}</span>
-                          </div>
-                          <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                        </div>
-                        <AnimatedProgress value={skill.level} />
-                      </li>
+                      <Badge key={skill.name} variant="secondary" className="flex items-center gap-2">
+                         <skill.icon className="h-4 w-4" />
+                        {skill.name}
+                      </Badge>
                     ))}
-                  </ul>
+                  </div>
                 </CardContent>
               </Card>
             </FadeIn>
