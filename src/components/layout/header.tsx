@@ -3,13 +3,14 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Code, Menu, X } from 'lucide-react';
+import Image from 'next/image';
+import { Menu, X } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
-import { cn } from '@/lib/utils';
 import { SOCIAL_LINKS } from '@/lib/data';
 import { ThemeToggle } from '@/components/theme-toggle';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const NAV_LINKS = [
   { name: 'Experience', href: '#experience' },
@@ -21,13 +22,29 @@ const NAV_LINKS = [
 export function Header() {
   const isMobile = useIsMobile();
   const [isOpen, setIsOpen] = useState(false);
+  const profilePhoto = PlaceHolderImages.find((img) => img.id === 'profile-photo');
+
+  const Logo = () => (
+    <div className="flex items-center gap-2 font-bold text-lg">
+        {profilePhoto && (
+            <Image
+                src={profilePhoto.imageUrl}
+                alt="Profile photo"
+                width={32}
+                height={32}
+                className="rounded-full object-cover"
+                data-ai-hint={profilePhoto.imageHint}
+            />
+        )}
+      <span>Devfolio</span>
+    </div>
+  );
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2 font-bold text-lg">
-          <Code className="h-6 w-6 text-accent" />
-          <span>Devfolio</span>
+          <Logo />
         </Link>
         {isMobile ? (
           <div className="flex items-center gap-2">
@@ -43,8 +60,7 @@ export function Header() {
                 <div className="flex h-full flex-col">
                   <div className="flex items-center justify-between border-b pb-4">
                     <Link href="/" className="flex items-center gap-2 font-bold text-lg" onClick={() => setIsOpen(false)}>
-                      <Code className="h-6 w-6 text-accent" />
-                      <span>Devfolio</span>
+                      <Logo />
                     </Link>
                     <SheetClose asChild>
                       <Button variant="ghost" size="icon">
