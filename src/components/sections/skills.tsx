@@ -17,8 +17,8 @@ export function SkillsSection() {
             <FadeIn key={category.name} delay={index * 0.1}>
               <Card className="h-full shadow-sm transition-shadow hover:shadow-lg bg-card">
                 <CardHeader className="flex flex-row items-center gap-4 pb-4">
-                  <div className="p-3 rounded-md bg-accent/10">
-                    <category.icon className="h-6 w-6 text-accent" />
+                  <div className=" rounded-md bg-accent/10">
+                    <category.icon className="h-4 w-4 text-accent" />
                   </div>
                   <CardTitle>{category.name}</CardTitle>
                 </CardHeader>
@@ -26,7 +26,7 @@ export function SkillsSection() {
                   <ul className="space-y-2 text-muted-foreground">
                     {category.skills.map((skill) => (
                       <li key={skill.name} className="flex items-center gap-2">
-                         <skill.icon className="h-4 w-4" />
+                         {/* <skill.icon className="h-4 w-4" /> */}
                         <span>{skill.name}</span>
                       </li>
                     ))}

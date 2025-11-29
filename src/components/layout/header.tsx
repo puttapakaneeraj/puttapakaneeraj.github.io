@@ -33,7 +33,7 @@ export function Header() {
     <div className="flex items-center gap-2 font-bold text-lg">
         {profilePhoto && (
             <Image
-                src={profilePhoto.imageUrl}
+                src={`/${profilePhoto.imageUrl}`}
                 alt="Profile photo"
                 width={32}
                 height={32}

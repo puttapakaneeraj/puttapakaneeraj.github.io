@@ -19,28 +19,28 @@ import {
 import { PlaceHolderImages } from './placeholder-images';
 
 export const PROFILE_DATA = {
-  name: 'Alex Doe',
-  title: 'Full-Stack Software Developer',
+  name: 'Neeraj Goud',
+  title: 'Software Developer',
   summary:
-    "A passionate and creative full-stack developer with a knack for building beautiful, functional, and user-centric web applications. With over 5 years of experience, I specialize in JavaScript ecosystems, particularly React and Node.js, and I'm always excited to learn new technologies.",
-  email: 'hello@alexdoe.com',
-  location: 'New York, NY, USA',
+    "Crafting seamless digital experiences through clean code, creative logic, and modern design — turning ideas into impactful solutions.",
+  email: 'neerajkumarputtapaka@gmail.com',
+  location: 'Hyderabad, India',
 };
 
 export const SOCIAL_LINKS = [
   {
     name: 'GitHub',
-    url: 'https://github.com',
+    url: 'https://github.com/NeerajGoud1',
     icon: Github,
   },
   {
     name: 'LinkedIn',
-    url: 'https://linkedin.com',
+    url: 'https://www.linkedin.com/in/neeraj-puttapaka-5b8a19319/',
     icon: Linkedin,
   },
   {
     name: 'Twitter',
-    url: 'https://twitter.com',
+    url: 'https://x.com/neeraj_goud1',
     icon: Twitter,
   },
 ];
@@ -57,70 +57,72 @@ type SkillCategory = {
 };
 
 export const SKILLS_DATA: SkillCategory[] = [
-  {
-    name: 'Frontend',
-    icon: Monitor,
-    skills: [
-      { name: 'React / Next.js', icon: Component },
-      { name: 'TypeScript', icon: Code },
-      { name: 'Tailwind CSS', icon: Paintbrush },
-      { name: 'HTML5 & CSS3', icon: Code },
-    ],
-  },
-  {
-    name: 'Backend',
+    {
+    name: 'Frameworks/Libraries',
+    
     icon: Server,
     skills: [
-      { name: 'Node.js / Express', icon: Layers },
-      { name: 'Python / Django', icon: Code },
-      { name: 'PostgreSQL', icon: Database },
-      { name: 'Firebase', icon: Cloud },
+      { name: 'NodeJS / ExpressJS', icon: Layers },
+      { name: 'ReactJS / NextJS', icon: Code },
+      { name: 'Redux / Recoil', icon: Database },
+        { name: 'Tailwind', icon: Cloud },
     ],
   },
+ 
+
   {
-    name: 'AI & DevOps',
-    icon: Bot,
+    name: 'DevOps/Tools',
+    icon: Cloud,
     skills: [
-      { name: 'Genkit / Gemini', icon: BrainCircuit },
       { name: 'Docker', icon: Code },
+      {name : 'Kubernetes', icon: Cloud},
       { name: 'Git & GitHub', icon: Github },
       { name: 'CI/CD Pipelines', icon: Code },
+      {name : 'Postman', icon: MessageCircle},
     ],
   },
+  
   {
-    name: 'Soft Skills',
+    name: 'Languages',
     icon: Users,
     skills: [
-      { name: 'Agile Methodologies', icon: Layers },
-      { name: 'Team Collaboration', icon: Users },
-      { name: 'Effective Communication', icon: MessageCircle },
-      { name: 'Problem Solving', icon: BrainCircuit },
+      { name: 'Java', icon: BrainCircuit },
+      { name: 'JavaScript', icon: Code },
+      { name: 'Python', icon: MessageCircle },
+      { name: 'TypeScript', icon: Bot },
+      {name : 'C/C++', icon: Monitor},
+    ],
+  },
+   {
+    name: 'Database',
+    icon: Database,
+    skills: [
+      { name: 'MongoDB', icon: Component },
+      { name: 'MySQL', icon: Code },
+      { name: 'Firebase', icon: Paintbrush },
+      {name : 'Supabase', icon: Layers},  
+    
     ],
   },
 ];
 
 export const EXPERIENCE_DATA = [
-  {
-    company: 'Tech Solutions Inc.',
-    role: 'Senior Software Engineer',
-    period: '2021 - Present',
-    description:
-      'Led the development of a new client-facing analytics dashboard using Next.js and Chart.js, improving data visualization and user engagement by 40%. Mentored junior developers and conducted code reviews to maintain high code quality.',
+    {
+    company : "EazyByts",
+    role : "Web Developer Intern",
+    period: 'OCT 2025 - NOV 2025',
+    description : "Contributed to full-stack development by building responsive UIs, developing backend APIs, managing databases, and deploying application modules. Collaborated closely with the team to implement end-to-end features, resolve issues, and improve overall project performance."
+
   },
   {
-    company: 'Innovate Co.',
-    role: 'Full-Stack Developer',
-    period: '2019 - 2021',
+    company: 'Apna College',
+    role: 'Teaching Assistant & Mentor',
+    period: 'June 2025 - Oct 2025',
     description:
-      'Developed and maintained RESTful APIs with Node.js and Express for a suite of internal tools. Collaborated with the design team to implement responsive user interfaces with React, resulting in a 25% increase in user satisfaction.',
+      " Mentored and resolved queries for 500+ students on Data Structures & Algorithms, and the MERN stack Development via Discord channels.  Facilitated peer-to-peer mentorship, fostering a collaborative learning community across 3,000+ active learners."
   },
-  {
-    company: 'Web Wizards Agency',
-    role: 'Junior Web Developer',
-    period: '2017 - 2019',
-    description:
-      'Built and maintained client websites using HTML, CSS, and JavaScript. Gained foundational experience in version control with Git and agile development methodologies.',
-  },
+
+
 ];
 
 const getImageUrl = (id: string) => PlaceHolderImages.find(img => img.id === id)?.imageUrl || '';
@@ -128,30 +130,30 @@ const getImageHint = (id: string) => PlaceHolderImages.find(img => img.id === id
 
 export const PROJECTS_DATA = [
   {
-    title: 'Project Nova',
-    description: 'A comprehensive project management tool designed to streamline team workflows and enhance productivity. Features include task tracking, real-time collaboration, and reporting.',
-    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Firebase'],
+    title: 'TradeHive',
+    description: 'A full stock trading simulation web application that allows users to register, authenticate, and securely buy/sell stocks with real-time position and holdings tracking.',
+    techStack: ['React.js', 'JavaScript', 'Node.js', 'Express', 'MongoDB', 'Firebase', 'Material-UI'],
     imageUrl: getImageUrl('project-1'),
     imageHint: getImageHint('project-1'),
-    liveUrl: '#',
-    githubUrl: '#',
+    liveUrl: 'https://tradehive-eight.vercel.app/',
+    githubUrl: 'https://github.com/NeerajGoud1/TradeHive',
   },
   {
-    title: 'Connectify',
-    description: 'A social networking platform for professionals to connect, share insights, and build their personal brand. Includes a real-time chat feature and a dynamic content feed.',
-    techStack: ['React', 'Node.js', 'PostgreSQL', 'WebSockets'],
+    title: 'StallOS',
+    description: 'An application that leverages artificial intelligence to empower street food vendors.',
+    techStack: ['React', 'Node.js', 'Supabse', 'Vapi', 'ChartJs', 'Gemini'],
     imageUrl: getImageUrl('project-2'),
     imageHint: getImageHint('project-2'),
-    liveUrl: '#',
-    githubUrl: '#',
+    liveUrl: 'https://stall-os.vercel.app/',
+    githubUrl: 'https://github.com/NeerajGoud1/StallOss',
   },
   {
-    title: 'DataViz Pro',
-    description: 'A data visualization tool that transforms complex datasets into beautiful, interactive charts and graphs. Built for data analysts and business intelligence teams.',
-    techStack: ['Vue.js', 'D3.js', 'Python', 'Django'],
+    title: 'Higher Studies',
+    description: 'A full-stack application for college automation to manage student higher studies and competitive exam data.',
+    techStack: ['Node.js', 'Express.js', 'React', 'MongoDB', 'Tailwind CSS'],
     imageUrl: getImageUrl('project-3'),
     imageHint: getImageHint('project-3'),
-    liveUrl: '#',
-    githubUrl: '#',
+    liveUrl: 'https://higherstudies.vercel.app/',
+    githubUrl: 'https://github.com/NeerajGoud1/HIgherStudiesFinal',
   },
 ];

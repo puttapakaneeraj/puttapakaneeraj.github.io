@@ -28,7 +28,7 @@ export function HeroSection() {
             </FadeIn>
             <FadeIn delay={0.8}>
               <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-                <Button asChild size="lg">
+                <Button asChild >
                   <Link href="#contact">
                     <Mail className="mr-2 h-5 w-5" />
                     Contact Me

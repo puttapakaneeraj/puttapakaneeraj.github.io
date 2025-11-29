@@ -9,7 +9,7 @@ export function Footer() {
         <div className="flex items-center gap-2">
           <Code className="h-5 w-5 text-accent" />
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} {PROFILE_DATA.name}. All rights reserved.
+            © {new Date().getFullYear()} {PROFILE_DATA.name}!
           </p>
         </div>
         <div className="flex items-center gap-4">
