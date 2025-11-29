@@ -1,4 +1,4 @@
-# **App Name**: Devfolio
+# **App Name**: Neeraj Goud
 
 ## Core Features:
 

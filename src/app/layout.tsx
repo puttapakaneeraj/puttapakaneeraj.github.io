@@ -4,9 +4,9 @@ import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
-  title: 'Devfolio | Software Developer Portfolio',
-  description: 'A modern, animated portfolio website for a software developer, built with Next.js and Tailwind CSS.',
-};
+  title: 'Neeraj Goud',
+  description: "Neeraj's Personal Portfolio Website",
+}
 
 export default function RootLayout({
   children,
@@ -19,6 +19,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+        <link rel="icon" href="profile.png" />
       </head>
       <body className="font-body antialiased">
         <ThemeProvider

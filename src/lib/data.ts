@@ -84,7 +84,7 @@ export const SKILLS_DATA: SkillCategory[] = [
   
   {
     name: 'Languages',
-    icon: Users,
+    icon: Code,
     skills: [
       { name: 'Java', icon: BrainCircuit },
       { name: 'JavaScript', icon: Code },
